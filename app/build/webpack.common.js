@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: './src/app.tsx',
   output: {
-    filename: 'bundle.js',
+    filename: '_bundle/bundle.js',
     path: path.resolve(__dirname, '../dist'),
     publicPath: './',
   },
@@ -32,7 +32,9 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
-          {loader: 'css-loader', options: {url: false}},
+          {
+            loader: 'css-loader'
+          },
         ],
       },
       {
@@ -43,7 +45,7 @@ module.exports = {
           // Translates CSS into CommonJS
           "css-loader",
           // Compiles Sass to CSS
-          "sass-loader",
+          "sass-loader"
         ],
       },
       {
@@ -51,7 +53,20 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            options: {},
+            options: {
+              name: 'img/[name]-[hash:6].[ext]'
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(ttf|eot|woff|woff2|svg)/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'fonts/[name]-[hash:6].[ext]'
+            },
           },
         ],
       },

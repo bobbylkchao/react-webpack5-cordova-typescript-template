@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack serve --config ./build/webpack.dev.js",
     "watch": "webpack serve --watch --config ./build/webpack.prod.js",
-    "build": "webpack serve --config ./build/webpack.prod.js",
+    "build": "webpack --config ./build/webpack.prod.js",
     "lint": "eslint --fix --ext .js --ext .jsx --ext .ts --ext .tsx src/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
