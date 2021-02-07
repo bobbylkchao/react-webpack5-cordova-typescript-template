@@ -13,4 +13,4 @@
 2. cd app
 3. npm install
 4. npm run start / npm run build
-5. For cordova testing, remember run: cordova platform add ios / cordova platform add android
+5. For cordova testing, remember ennter /app/cordova/app/ , then run: cordova platform add ios / cordova platform add android
